@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+{% block title %}
+    {{ blog_content.title }}
+{% endblock %}
+{% block script %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/detail.css' %}"/>
+    <script src="{% static 'bootstrap/js/detail.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/blog.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+{% endblock %}
+
+{% block body %}
+    <div role="main" class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <h1>{{ blog_content.title }}</h1>
+                <p>{{ blog_content.category }}</p>
+                <p>{{ blog_content.date_time }}</p>
+                {#    <p>{{ blog_content.content }}</p>#}
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <textarea id="comment-md" name="comment"
+                                  placeholder="Say something...">{{ blog_content.content }}</textarea>
+                        <br/>
+                        <div id="comment-md-preview-container">
+                            <div class="well well-sm well-light md-preview margin-top-10" id="comment-md-preview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

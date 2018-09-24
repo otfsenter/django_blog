@@ -1,0 +1,17 @@
+venv/
+.idea/
+*.pyc
+*.pyo
+*.xml
+*.iml
+t.py
+*.pkl
+*.log
+static/silk
+static/rest_framework
+static/admin
+tools/
+config.py
+tools/
+*.sqlite3
+__pycache__/
