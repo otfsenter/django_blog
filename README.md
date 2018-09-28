@@ -4,8 +4,8 @@
     * add uwsgi.log
 
 ### TODO:
-    * bootstrap to pretty the html
     * django api oauth
-    * django-silk
+    * https
+    * docker
 
 
