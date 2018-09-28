@@ -4,11 +4,11 @@
 {% block title %}
     {{ blog_content.title }}
 {% endblock %}
-{% block script %}
-    <link rel="stylesheet" href="{% static 'bootstrap/css/detail.css' %}"/>
-    <script src="{% static 'bootstrap/js/detail.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/blog.css' %}">
+{% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{% static 'strapdown/strapdown.css' %}" rel="stylesheet">
+    <link href="{% static 'strapdown/themes/readable.min.css' %}" rel="stylesheet">
 
 
 {% endblock %}
@@ -24,16 +24,21 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <textarea id="comment-md" name="comment"
-                                  placeholder="Say something...">{{ blog_content.content }}</textarea>
-                        <br/>
-                        <div id="comment-md-preview-container">
-                            <div class="well well-sm well-light md-preview margin-top-10" id="comment-md-preview"></div>
+                        <div id="content_main">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="{% static 'strapdown/layer/layer.js' %}"></script>
+    <script src="{% static 'strapdown/strapdown.js' %}"></script>
+    <script src="{% static 'js/hex2utf8.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#content_main').html(markdownFromText(hex2a("{{ blog_content.content }}"), "content_main"))
+        })
+    </script>
 
 {% endblock %}

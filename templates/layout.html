@@ -6,29 +6,62 @@
     <title>
         {% block title %}Welcome{% endblock %}
     </title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.10.0/js/bootstrap-markdown.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.10.0/css/bootstrap-markdown.min.css"/>
-    <link data-require="fontawesome@4.1.0" data-semver="4.1.0" rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-    <script data-require="marked@*" data-semver="0.3.1" src="{% static 'bootstrap/js/marked.js' %}"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 
     {% block css %}
 
     {% endblock %}
-    <base target="_blank">
-    {% block script %} {% endblock %}
+
+    {% block script-front %}
+
+    {% endblock %}
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'blog:index' %}">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'blog:index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'movie:index' %}">Movie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 {% block body %}
+
 {% endblock %}
 
-{% block script-end %} {% endblock %}
+
+{% block script-end %}
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% endblock %}
+
 </body>
+
+<footer>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</footer>
 
 </html>

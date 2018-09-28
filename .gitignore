@@ -10,6 +10,7 @@ t.py
 static/silk
 static/rest_framework
 static/admin
+static/bootstrap
 tools/
 config.py
 tools/
