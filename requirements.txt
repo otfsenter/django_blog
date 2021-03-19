@@ -7,7 +7,7 @@ Django==2.1.1
 django-cors-middleware==1.3.1
 django-oauth-toolkit==1.2.0
 django-silk==3.0.1
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 gprof2dot==2016.10.13
 idna==2.7
 Jinja2==2.10
